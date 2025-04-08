@@ -30,13 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaInicio));
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.BTN_TEST = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.LOGO_CISNE = new System.Windows.Forms.PictureBox();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.BTN_OPCIONES = new System.Windows.Forms.PictureBox();
             this.PanelContenedorFondo = new System.Windows.Forms.Panel();
-            this.Login_Continuar = new System.Windows.Forms.Button();
+            this.BTN_Ingresar = new MAD.Clases.Buttons();
             this.BTN_Reportes = new MAD.Clases.Buttons();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO_CISNE)).BeginInit();
@@ -52,20 +51,7 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(644, 593);
             this.panelContenedor.TabIndex = 0;
-            // 
-            // BTN_TEST
-            // 
-            this.BTN_TEST.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(172)))), ((int)(((byte)(183)))));
-            this.BTN_TEST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_TEST.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.BTN_TEST.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BTN_TEST.Location = new System.Drawing.Point(1174, 641);
-            this.BTN_TEST.Name = "BTN_TEST";
-            this.BTN_TEST.Size = new System.Drawing.Size(102, 35);
-            this.BTN_TEST.TabIndex = 1;
-            this.BTN_TEST.Text = "button1";
-            this.BTN_TEST.UseVisualStyleBackColor = false;
-            this.BTN_TEST.Click += new System.EventHandler(this.BTN_TEST_Click);
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // PanelMenu
             // 
@@ -115,29 +101,29 @@
             // PanelContenedorFondo
             // 
             this.PanelContenedorFondo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PanelContenedorFondo.Controls.Add(this.BTN_Ingresar);
             this.PanelContenedorFondo.Controls.Add(this.BTN_Reportes);
-            this.PanelContenedorFondo.Controls.Add(this.Login_Continuar);
             this.PanelContenedorFondo.Controls.Add(this.panelContenedor);
-            this.PanelContenedorFondo.Controls.Add(this.BTN_TEST);
             this.PanelContenedorFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenedorFondo.Location = new System.Drawing.Point(0, 0);
             this.PanelContenedorFondo.Name = "PanelContenedorFondo";
             this.PanelContenedorFondo.Size = new System.Drawing.Size(1300, 700);
             this.PanelContenedorFondo.TabIndex = 4;
+            this.PanelContenedorFondo.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedorFondo_Paint);
             // 
-            // Login_Continuar
+            // BTN_Ingresar
             // 
-            this.Login_Continuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(49)))), ((int)(((byte)(86)))));
-            this.Login_Continuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login_Continuar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.Login_Continuar.ForeColor = System.Drawing.SystemColors.Window;
-            this.Login_Continuar.Location = new System.Drawing.Point(1174, 594);
-            this.Login_Continuar.Margin = new System.Windows.Forms.Padding(4);
-            this.Login_Continuar.Name = "Login_Continuar";
-            this.Login_Continuar.Size = new System.Drawing.Size(102, 40);
-            this.Login_Continuar.TabIndex = 4;
-            this.Login_Continuar.Text = "Ingresar";
-            this.Login_Continuar.UseVisualStyleBackColor = false;
+            this.BTN_Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(49)))), ((int)(((byte)(86)))));
+            this.BTN_Ingresar.FlatAppearance.BorderSize = 0;
+            this.BTN_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_Ingresar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.BTN_Ingresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BTN_Ingresar.Location = new System.Drawing.Point(1145, 590);
+            this.BTN_Ingresar.Name = "BTN_Ingresar";
+            this.BTN_Ingresar.Size = new System.Drawing.Size(150, 40);
+            this.BTN_Ingresar.TabIndex = 6;
+            this.BTN_Ingresar.Text = "Ingresar";
+            this.BTN_Ingresar.UseVisualStyleBackColor = false;
             // 
             // BTN_Reportes
             // 
@@ -146,12 +132,13 @@
             this.BTN_Reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Reportes.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.BTN_Reportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BTN_Reportes.Location = new System.Drawing.Point(201, 321);
+            this.BTN_Reportes.Location = new System.Drawing.Point(1145, 636);
             this.BTN_Reportes.Name = "BTN_Reportes";
             this.BTN_Reportes.Size = new System.Drawing.Size(150, 40);
             this.BTN_Reportes.TabIndex = 5;
             this.BTN_Reportes.Text = "Reportes";
             this.BTN_Reportes.UseVisualStyleBackColor = false;
+            this.BTN_Reportes.Click += new System.EventHandler(this.BTN_Reportes_Click);
             // 
             // PantallaInicio
             // 
@@ -178,13 +165,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Button BTN_TEST;
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Panel PanelBarraTitulo;
         private System.Windows.Forms.Panel PanelContenedorFondo;
         private System.Windows.Forms.PictureBox LOGO_CISNE;
         private System.Windows.Forms.PictureBox BTN_OPCIONES;
-        private System.Windows.Forms.Button Login_Continuar;
         private MAD.Clases.Buttons BTN_Reportes;
+        private MAD.Clases.Buttons BTN_Ingresar;
     }
 }

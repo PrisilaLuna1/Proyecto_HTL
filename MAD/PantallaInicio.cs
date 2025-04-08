@@ -33,7 +33,7 @@ namespace AAVD
 
         private void BTN_TEST_Click(object sender, EventArgs e)
         {
-            AbrirControlEnPanel(new User_Controls.UserControl1());
+            //AbrirControlEnPanel(new User_Controls.UserControl1());
         }
 
         private void BTN_OPCIONES_Click(object sender, EventArgs e)
@@ -52,6 +52,21 @@ namespace AAVD
         }
 
         private void PanelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BTN_Reportes_Click(object sender, EventArgs e)
+        {
+            AbrirControlEnPanel(new User_Controls.UserControl1());
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelContenedorFondo_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -23,7 +23,7 @@ namespace MAD.Clases
             this.Size = new Size(150, 40);
             
             this.BackColor = Color.AliceBlue;
-            this.ForeColor = Color.MidnightBlue;
+            this.ForeColor = Color.White;
         }
 
         //obtener los gráficos para la forma del botón
